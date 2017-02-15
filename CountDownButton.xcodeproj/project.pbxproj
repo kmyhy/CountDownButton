@@ -13,6 +13,8 @@
 		122F41671E542024000D41AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122F41651E542024000D41AB /* Main.storyboard */; };
 		122F41691E542024000D41AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122F41681E542024000D41AB /* Assets.xcassets */; };
 		122F416C1E542024000D41AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122F416A1E542024000D41AB /* LaunchScreen.storyboard */; };
+		122F41751E54291B000D41AB /* CountdownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 122F41741E54291B000D41AB /* CountdownButton.m */; };
+		122F41781E542BE7000D41AB /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 122F41771E542BE7000D41AB /* UIView+Toast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		122F41681E542024000D41AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		122F416B1E542024000D41AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		122F416D1E542024000D41AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		122F41731E54291B000D41AB /* CountdownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownButton.h; sourceTree = "<group>"; };
+		122F41741E54291B000D41AB /* CountdownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownButton.m; sourceTree = "<group>"; };
+		122F41761E542BE7000D41AB /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		122F41771E542BE7000D41AB /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +64,14 @@
 		122F415B1E542024000D41AB /* CountDownButton */ = {
 			isa = PBXGroup;
 			children = (
+				122F41761E542BE7000D41AB /* UIView+Toast.h */,
+				122F41771E542BE7000D41AB /* UIView+Toast.m */,
 				122F415F1E542024000D41AB /* AppDelegate.h */,
 				122F41601E542024000D41AB /* AppDelegate.m */,
 				122F41621E542024000D41AB /* ViewController.h */,
 				122F41631E542024000D41AB /* ViewController.m */,
+				122F41731E54291B000D41AB /* CountdownButton.h */,
+				122F41741E54291B000D41AB /* CountdownButton.m */,
 				122F41651E542024000D41AB /* Main.storyboard */,
 				122F41681E542024000D41AB /* Assets.xcassets */,
 				122F416A1E542024000D41AB /* LaunchScreen.storyboard */,
@@ -151,7 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				122F41641E542024000D41AB /* ViewController.m in Sources */,
+				122F41751E54291B000D41AB /* CountdownButton.m in Sources */,
 				122F41611E542024000D41AB /* AppDelegate.m in Sources */,
+				122F41781E542BE7000D41AB /* UIView+Toast.m in Sources */,
 				122F415E1E542024000D41AB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
