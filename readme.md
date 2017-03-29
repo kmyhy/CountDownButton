@@ -1,4 +1,4 @@
-#带倒计时功能的 UIButton
+#一个有倒计时功能的 UIButton
 
 一个自定义的 UIButton，见下图：
 

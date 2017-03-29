@@ -21,10 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _button.originTitle = @"获取验证码";
+    [_button setTitle: @"获取验证码" forState:UIControlStateNormal];
     _button.countdownFormat = @"%2d 秒";
-    _button.maxCountdown = 60;
-    _button.updateInterval = 0.1;
+    _button.maxCountdown = 10;
+    _button.updateInterval = 1;
     
 }
 

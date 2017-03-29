@@ -10,7 +10,6 @@
 
 @implementation CountdownButton{
     CADisplayLink *displayLink;
-    BOOL restoredTitle;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -31,21 +30,12 @@
     _maxCountdown = 60; // 倒计时时间，单位秒
     _countdownFormat = @"%d秒"; // 倒计时时，button 上的标题格式
     _updateInterval = 1; // 倒计时刷新时间，默认 1 秒。这东西会影响从后台转到前台的刷新效果。
-    
-    displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(countdownPerSecond:)];
-    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-    
-    _lastTime = CACurrentMediaTime();
 
 }
 -(void)countdownPerSecond:(CADisplayLink *)sender{
     
-    if(_beginTime == 0){ // 没有倒计时，按正常帧率走
-        if(!restoredTitle){
-            [self setTitle:_originTitle forState:UIControlStateNormal];
-            restoredTitle = NO;
-        }
-    }else{// 正在倒计时，按每秒更新
+    if(_beginTime > 0){ // _beginTime == 0 表示还没有开始倒计时，不执行以下代码
+        // 正在倒计时，按每秒更新
         double now = CACurrentMediaTime();
         double deltaTime = now - _lastTime;
         
@@ -56,11 +46,14 @@
             if( ellapse >= _maxCountdown){
                 _beginTime = 0;
                 self.enabled = YES;
+
             }else{
                 double currentCountdown = _maxCountdown-ellapse;
-                [self setTitle:[NSString stringWithFormat:_countdownFormat,(int)currentCountdown] forState:UIControlStateNormal];
+                [self setTitle:[NSString stringWithFormat:_countdownFormat,(int)currentCountdown] forState:UIControlStateDisabled];
             }
         }
+    }else{
+        [displayLink invalidate];
     }
     
 }
@@ -70,11 +63,18 @@
 - (void) countdown
 {
     if(_beginTime == 0){
+        displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(countdownPerSecond:)];
+        [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+        
         _beginTime = CACurrentMediaTime();
         self.enabled = NO;
         [self setNeedsDisplay];
     }
     
 }
-
+-(void)stopCountdown{
+    if(displayLink){
+        [displayLink invalidate];
+    }
+}
 @end

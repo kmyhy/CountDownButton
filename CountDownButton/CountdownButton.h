@@ -15,8 +15,8 @@
 @property(assign,nonatomic)double beginTime;
 @property(assign,nonatomic)double updateInterval;
 
-@property(strong,nonatomic)NSString* originTitle;
 @property(strong,nonatomic)NSString* countdownFormat;
 
 -(void)countdown;
+-(void)stopCountdown;
 @end
