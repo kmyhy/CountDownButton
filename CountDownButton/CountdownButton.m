@@ -49,7 +49,7 @@
 
             }else{
                 double currentCountdown = _maxCountdown-ellapse;
-                [self setTitle:[NSString stringWithFormat:_countdownFormat,(int)currentCountdown] forState:UIControlStateDisabled];
+                [self setTitle:[NSString stringWithFormat:_countdownFormat,(int)currentCountdown+1] forState:UIControlStateDisabled];
             }
         }
     }else{
