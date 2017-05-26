@@ -49,6 +49,7 @@
 
             }else{
                 double currentCountdown = _maxCountdown-ellapse;
+                // 开始计数的基数+1，比如10秒倒计时从10开始，10，9，8，7...1
                 [self setTitle:[NSString stringWithFormat:_countdownFormat,(int)currentCountdown+1] forState:UIControlStateDisabled];
             }
         }
