@@ -127,4 +127,8 @@
     self.layer.cornerRadius = cornerRadius;
     self.layer.masksToBounds = cornerRadius > 0;
 }
+
+//-(void)dealloc{
+//    [self stopCountdown];
+//}
 @end
