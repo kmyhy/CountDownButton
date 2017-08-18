@@ -15,7 +15,16 @@
 @property(assign,nonatomic)double beginTime;
 @property(assign,nonatomic)double updateInterval;
 
+/** 可视化设置边框宽度 */
+@property (nonatomic, assign)IBInspectable CGFloat borderWidth;
+/** 可视化设置边框颜色 */
+@property (nonatomic, strong)IBInspectable UIColor *borderColor;
+/** 可视化设置圆角 */
+@property (nonatomic, assign)IBInspectable CGFloat cornerRadius;
+
 @property(strong,nonatomic)NSString* countdownFormat;
+
+@property(strong,nonatomic)NSString* nextTitle;
 
 -(void)countdown;
 -(void)stopCountdown;

@@ -18,20 +18,27 @@
 
 > 你也可以用代码创建实例，比如使用 initWithFrame/buttonWithType 方法创建实例。
 
-### 初始化按钮属性
+### 设置按钮属性
 在 viewDidLoad 方法中设置按钮的属性：
 
 ```swift	
-	_button.originTitle = @"获取验证码";
-    _button.countdownFormat = @"%2d 秒";
-    _button.maxCountdown = 10;
-    _button.updateInterval = 0.1;
+	[_button setTitle: @"获取验证码" forState:UIControlStateNormal];
+	_button.nextTitle = @"重新获取";
+_button.countdownFormat = @"%2d秒后重新获取";
+   _button.maxCountdown = 10;
+	_button.updateInterval = 0.1;
+	_button.borderWidth = 1;
+	_button.borderColor = [UIColor whiteColor];
+	_button.cornerRadius = 14;
 ```
 
-* originTitle 属性是必须设置的，这样当计数结束，按钮标题才会恢复到 originTitle。
+* nextTitle 字符串当倒计时清零（结束）时，显示在按钮标题上。
 * countDownFormat 属性用于计数时设置按钮标题的格式，你可以不用设置，默认就是 @"%d秒"。
 * maxCoundown 属性是倒计数时间，默认为 60 秒。
 * updateInterval 属性指定倒计时的刷新间隔时间，为性能考虑，默认为 1 秒。这个值设得越小，倒计时刷新的间隔就越短。
+* borderWidth 属性是按钮的边框粗细，单位是像素。
+* borderColor 属性是边框色。
+* conerRadius 属性，按钮圆角半径。
 
 ### 开始倒计时
 
