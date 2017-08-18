@@ -44,3 +44,13 @@
 }
 ```
 
+### 停止倒计时
+
+在 view controller 的 viewWillDisappear 方法中调用 stopCountdown 方法停止定时器，否则 CADisplayLink 会无法释放，从而导致内存泄漏：
+
+```swift
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [_sendButton stopCountdown];
+}
+```
